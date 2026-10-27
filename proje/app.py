@@ -12,6 +12,17 @@ import random
 # Sayfa Ayarları
 st.set_page_config(page_title="Gelişmiş Biyoinformatik Analizörü", layout="wide")
 
+# --- STREAMLIT ARAYÜZ ELEMANLARINI GİZLEME (CSS) ---
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+.viewerBadge_container {display: none;}
+.stDeployButton {display: none;}
+</style>
+"""
+
 st.title("🧬 Kapsamlı DNA Analiz ve Gen Anotasyon Aracı")
 st.markdown("""
 Bu araç, DNA dizilerinin biyoinformatik analizlerini yapar, Açık Okuma Çerçevelerini (ORF) bulur, 
