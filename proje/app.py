@@ -12,16 +12,24 @@ import random
 # Sayfa Ayarları
 st.set_page_config(page_title="Gelişmiş Biyoinformatik Analizörü", layout="wide")
 
-# --- STREAMLIT ARAYÜZ ELEMANLARINI GİZLEME (CSS) ---
+# --- STREAMLIT ARAYÜZ ELEMANLARINI GİZLEME (GÜÇLENDİRİLMİŞ CSS) ---
 hide_streamlit_style = """
 <style>
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
-.viewerBadge_container {display: none;}
-.stDeployButton {display: none;}
+/* Sağ üstteki Fork, GitHub butonu ve üç noktayı gizler */
+[data-testid="stToolbar"] {visibility: hidden !important; display: none !important;}
+[data-testid="stHeader"] {visibility: hidden !important; display: none !important;}
+header {visibility: hidden !important; display: none !important;}
+
+/* Alt kısımdaki yazıları ve logoları gizler */
+footer {visibility: hidden !important;}
+#MainMenu {visibility: hidden !important;}
+
+/* Sağ alttaki geliştirici menüsü / rozetleri gizler */
+.viewerBadge_container {display: none !important;}
+.stDeployButton {display: none !important;}
 </style>
 """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.title("🧬 Kapsamlı DNA Analiz ve Gen Anotasyon Aracı")
 st.markdown("""
