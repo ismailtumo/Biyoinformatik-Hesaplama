@@ -12,16 +12,17 @@ import random
 # Sayfa Ayarları
 st.set_page_config(page_title="Gelişmiş Biyoinformatik Analizörü", layout="wide")
 
-# --- STREAMLIT ARAYÜZ ELEMANLARINI GİZLEME (SADECE GEREKSİZLER) ---
+# --- STREAMLIT ARAYÜZ ELEMANLARINI GİZLEME (EN GÜNCEL KOD) ---
 hide_streamlit_style = """
 <style>
-/* Sadece sağ üstteki Streamlit menüsünü (Fork, GitHub) gizler, SENİN MENÜNÜ KORUR */
-[data-testid="stToolbar"] {visibility: hidden !important; display: none !important;}
+/* Sağ üstteki "Deploy" / "Fork" butonunu gizler */
+[data-testid="stAppDeployButton"] {display: none !important;}
 
-/* Deploy (Yayınla) butonunu gizler */
-.stDeployButton {display: none !important;}
+/* Sağ üstteki diğer bağlantıları ve menüyü gizler */
+[data-testid="stToolbar"] {visibility: hidden !important;}
 
-/* En alttaki "Made with Streamlit" yazısını gizler */
+/* En alttaki Streamlit yazısını gizler */
+[data-testid="stFooter"] {display: none !important;}
 footer {visibility: hidden !important;}
 </style>
 """
